@@ -1,0 +1,22 @@
+{
+  "name": "@labor/asset-building-dev-server",
+  "version": "1.0.0",
+  "description": "An addon to our asset-builder that provides a dev server environment for webpack. Including support for multi-compilers!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/labor-digital/labor-dev-assetbuilding-dev-server.git"
+  },
+  "author": "Martin Neundorfer @LABOR",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/labor-digital/labor-dev-assetbuilding-dev-server#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "portfinder": "^1.0.20",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-hot-middleware": "^2.24.3"
+  }
+}
