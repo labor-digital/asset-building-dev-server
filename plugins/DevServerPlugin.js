@@ -2,7 +2,6 @@
  * Created by Martin Neundorfer on 18.12.2018.
  * For LABOR.digital
  */
-
 module.exports = class DevServerPlugin {
 
 	getModes(modes) {
@@ -49,7 +48,6 @@ module.exports = class DevServerPlugin {
 
 		return context;
 	}
-
 
 	alternativeCompiler(useDefaultCompiler, webpack, callback, context) {
 		if (context.mode !== "dev") return useDefaultCompiler;
@@ -154,12 +152,13 @@ module.exports = class DevServerPlugin {
 
 		delete config.output.path;
 		config.output.publicPath = "/" + appId;
-		config.entry = {
-			main: [
-				config.entry,
-				"webpack-hot-middleware/client?path=/" + appId + "__webpack_hmr&timeout=20000&reload=true"
-			]
-		};
+
+		// Rewrite entry to inject additional scripts
+		if(typeof config.entry === "string") config.entry = [config.entry];
+		if(Array.isArray(config.entry)) config.entry = {main: config.entry};
+		if(typeof config.entry !== "object" || !Array.isArray(config.entry.main)) throw new Error("Invalid entry configuration!");
+		config.entry.main.unshift("webpack-hot-middleware/client?path=/" + appId + "__webpack_hmr&timeout=20000&reload=true");
+		config.entry.main.unshift("eventsource-polyfill");
 
 		// Disable git adding
 		appConfig.disableGitAdd = true;
