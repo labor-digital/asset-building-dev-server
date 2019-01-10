@@ -14,6 +14,7 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/labor-digital/labor-dev-assetbuilding-dev-server#readme",
   "dependencies": {
+    "eventsource-polyfill": "^0.9.6",
     "express": "^4.16.4",
     "portfinder": "^1.0.20",
     "webpack-dev-middleware": "^3.4.0",
