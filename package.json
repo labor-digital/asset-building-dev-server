@@ -15,9 +15,9 @@
   "homepage": "https://bitbucket.org/labor-digital/labor-dev-assetbuilding-dev-server#readme",
   "dependencies": {
     "eventsource-polyfill": "^0.9.6",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "portfinder": "^1.0.20",
-    "webpack-dev-middleware": "^3.4.0",
-    "webpack-hot-middleware": "^2.24.3"
+    "webpack-dev-middleware": "^3.7.0",
+    "webpack-hot-middleware": "^2.25.0"
   }
 }
