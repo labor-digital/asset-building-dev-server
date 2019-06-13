@@ -1,6 +1,6 @@
 {
   "name": "@labor/asset-building-dev-server",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "An addon to our asset-builder that provides a dev server environment for webpack. Including support for multi-compilers!",
   "main": "index.js",
   "scripts": {
