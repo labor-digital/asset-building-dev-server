@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [1.2.0](https://bitbucket.org/labor-digital/labor-dev-assetbuilding-dev-server/branches/compare/v1.2.0%0Dv1.1.0#diff) (2019-09-26)
+
+
+### Features
+
+* implement history api fallback middleware ([612e480](https://bitbucket.org/labor-digital/labor-dev-assetbuilding-dev-server/commits/612e480))
+
+
+
 # [1.1.0](https://bitbucket.org/labor-digital/labor-dev-assetbuilding-dev-server/branches/compare/v1.1.0%0Dv1.0.1#diff) (2019-06-13)
 
 
