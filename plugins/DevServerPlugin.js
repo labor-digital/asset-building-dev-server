@@ -112,6 +112,11 @@ module.exports = class DevServerPlugin {
 					});
 				};
 
+				// Register fallback for history router
+				app.use(require("connect-history-api-fallback")({
+					"index": "/app-" + config.name
+				}));
+
 				// Register webpack as express middleware
 				app.use(require("webpack-dev-middleware")(compiler, {
 					logLevel: "silent",
@@ -121,8 +126,7 @@ module.exports = class DevServerPlugin {
 					path: config.output.publicPath + "__webpack_hmr",
 					heartbeat: 10 * 1000
 				}));
-				// Register fallback for history router
-				app.use(require("connect-history-api-fallback"));
+
 			});
 
 			// Start the server
