@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.1](https://bitbucket.org/labor-digital/labor-dev-assetbuilding-dev-server/branches/compare/v1.2.1%0Dv1.2.0#diff) (2019-09-26)
+
+
+### Bug Fixes
+
+* redirect history api to the correct entry point ([b508d0c](https://bitbucket.org/labor-digital/labor-dev-assetbuilding-dev-server/commits/b508d0c))
+
+
+
 # [1.2.0](https://bitbucket.org/labor-digital/labor-dev-assetbuilding-dev-server/branches/compare/v1.2.0%0Dv1.1.0#diff) (2019-09-26)
 
 
