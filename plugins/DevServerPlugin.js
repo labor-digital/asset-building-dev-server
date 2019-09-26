@@ -121,8 +121,9 @@ module.exports = class DevServerPlugin {
 					path: config.output.publicPath + "__webpack_hmr",
 					heartbeat: 10 * 1000
 				}));
+				// Register fallback for history router
+				app.use(require("connect-history-api-fallback"));
 			});
-
 
 			// Start the server
 			const server = http.createServer(app);
