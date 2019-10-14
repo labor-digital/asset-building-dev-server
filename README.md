@@ -14,8 +14,13 @@ To circumvent that, and to make the integration as smooth as possible I created 
 ```
 { 
     "builderVersion": 2,
-    "plugins": [
-        "@labor/asset-building-dev-server/plugins/DevServerPlugin.js"
+    "apps": [
+        {
+            [...]
+            "extensions": [
+                "@labor/asset-building-dev-server"
+            ]
+        }
     ] 
 }
 ```

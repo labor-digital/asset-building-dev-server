@@ -1,0 +1,29 @@
+{
+	"name": "demo",
+	"version": "1.0.0",
+	"description": "A demoproject to show how the buildprocess works",
+	"scripts": {
+		"build": "labor-asset-building build",
+		"watch": "labor-asset-building watch",
+		"dev": "labor-asset-building dev",
+		"link": "npm link @labor/asset-building @labor/asset-building-dev-server"
+	},
+	"devDependencies": {
+		"@labor/asset-building": "*",
+		"@labor/asset-building-dev-server": "*"
+	},
+	"labor": {
+		"builderVersion": 2,
+		"apps": [
+			{
+				"entry": "./frontend/src/Index.ts",
+				"output": "./frontend/dist/bundle.js",
+				"publicPath": "./",
+				"htmlTemplate": true
+			}
+		],
+		"extensions": [
+			"@labor/asset-building-dev-server"
+		]
+	}
+}
