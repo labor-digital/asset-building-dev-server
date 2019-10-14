@@ -55,6 +55,13 @@ export default function (context: CoreContext, scope: string) {
 		const context: WorkerContext = e.args.context;
 		if (context.mode !== "dev") return;
 
+		// Check if we are running as plugin in an existing app
+		if (global.EXPRESS_DEV_SERVER_PLUGIN_MODE === true) {
+			// Rewrite element config
+			rewriteAppConfig(context);
+			return;
+		}
+
 		// Check if the app disables the dev server
 		if (context.app.disableDevServer) return;
 

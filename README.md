@@ -14,14 +14,10 @@ To circumvent that, and to make the integration as smooth as possible I created 
 ```
 { 
     "builderVersion": 2,
-    "apps": [
-        {
-            [...]
-            "extensions": [
-                "@labor/asset-building-dev-server"
-            ]
-        }
-    ] 
+    [...]
+    "extensions": [
+        "@labor/asset-building-dev-server"
+    ]
 }
 ```
 * Add the following part to your package.json:
@@ -33,3 +29,22 @@ To circumvent that, and to make the integration as smooth as possible I created 
 ```
 * Start your server by running "npm run dev" -> The urls are printed to the console
 * Done! :-)
+
+## Adding the dev server to express apps
+Our asset builder can run as a middleware for every express app, providing
+hot module reloading in the same way the "dev" command does for virtually
+every express app.
+
+We provide a function you can use in your server.js file. It will only apply
+the required middlewares if your NODE_ENV variable is set to "development".
+Register the express plugin like:
+```
+const devServerPlugin = require("@labor/asset-building-dev-server/dist/ExpressDevServerPlugin");
+const express = require("express");
+const app = express();
+
+// Apply the dev server plugin to the app
+devServerPlugin(app).then(() => {
+    // Your express setup goes here...
+});
+```

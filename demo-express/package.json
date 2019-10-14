@@ -3,6 +3,8 @@
 	"version": "1.0.0",
 	"description": "A demoproject to show how the buildprocess works",
 	"scripts": {
+		"start": "node server.js",
+		"start:dev": "node server.js development",
 		"build": "labor-asset-building build",
 		"watch": "labor-asset-building watch",
 		"dev": "labor-asset-building dev",
