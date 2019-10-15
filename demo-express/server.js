@@ -1,4 +1,5 @@
-const devServerPlugin = require("@labor/asset-building-dev-server/dist/ExpressDevServerPlugin");
+const expressAssetBuildingPlugin = require("@labor/asset-building/dist/Express/expressAssetBuildingPlugin.js");
+const expressDevServerPlugin = require("@labor/asset-building-dev-server/dist/expressDevServerPlugin.js");
 const express = require("express");
 const app = express();
 const port = 8000;
@@ -7,7 +8,8 @@ const port = 8000;
 if (process.argv[2] === "development") process.env.NODE_ENV = "development";
 
 // Apply the dev server plugin to the app
-devServerPlugin(app)
+expressAssetBuildingPlugin(app)
+	.then(expressDevServerPlugin)
 	.then(() => {
 		app.get("/", (req, res) => {
 			res.send("Not served by dev server!");

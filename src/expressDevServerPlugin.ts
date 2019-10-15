@@ -1,5 +1,4 @@
-import {Application} from "express";
-import {CompilerFactory} from "@labor/asset-building/dist/CompilerFactory";
+import ExpressContext from "@labor/asset-building/dist/Express/ExpressContext";
 
 declare global {
 	namespace NodeJS {
@@ -9,38 +8,28 @@ declare global {
 	}
 }
 
-module.exports = function expressDevServerPlugin(app: Application, cwd?: string | null, appId?: number): Promise<Application> {
+// Mark plugin as loaded
+global.EXPRESS_DEV_SERVER_PLUGIN_MODE = true;
+
+module.exports = function expressDevServerPlugin(context: ExpressContext): Promise<ExpressContext> {
 
 	// Ignore if this is not a dev context
-	if (process.env.NODE_ENV !== "development") {
-		console.log("expressDevServerPlugin: Skipping webpack, because NODE_ENV is not set to \"development\"!");
-		return Promise.resolve(app);
+	if (context.isProd) {
+		console.log("expressDevServerPlugin: Skipping dev server, because the app is running in production mode!");
+		return Promise.resolve(context);
 	}
 
-	// Force the mode
-	process.argv[2] = "dev";
+	// Register webpack as express middleware
+	context.expressApp.use(require("webpack-dev-middleware")(context.compiler, {
+		logLevel: "silent",
+		publicPath: context.compiler.options.output.publicPath.replace(/^\./, "")
+	}));
+	context.expressApp.use(require("webpack-hot-middleware")(context.compiler, {
+		// log: false,
+		path: "/__webpack_hmr",
+		heartbeat: 10 * 1000
+	}));
 
-	// Prepare the process
-	if (typeof cwd !== "string") cwd = process.cwd();
-	global.EXPRESS_DEV_SERVER_PLUGIN_MODE = true;
-
-	// Initialize the webpack compiler
-	return CompilerFactory.getWebpackCompiler(cwd, appId).then(compiler => {
-		// @ts-ignore
-		if (typeof compiler.compiler !== "undefined") compiler = compiler.compiler;
-
-		// Register webpack as express middleware
-		app.use(require("webpack-dev-middleware")(compiler, {
-			logLevel: "silent",
-			publicPath: compiler.options.output.publicPath
-		}));
-		app.use(require("webpack-hot-middleware")(compiler, {
-			// log: false,
-			path: "/__webpack_hmr",
-			heartbeat: 10 * 1000
-		}));
-
-		// Return the app
-		return app;
-	});
+	// Done
+	return Promise.resolve(context);
 };

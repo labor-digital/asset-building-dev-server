@@ -18,8 +18,6 @@ function drawLine(char?: string): string {
 function rewriteAppConfig(context: WorkerContext): void {
 	const config = context.webpackConfig;
 	config.watch = true;
-	delete config.output.path;
-	config.output.publicPath = "/";
 
 	// Rewrite entry to inject additional scripts
 	if (typeof config.entry === "string") config.entry = [config.entry];
@@ -49,6 +47,12 @@ export default function (context: CoreContext, scope: string) {
 		e.args.isProd = e.args.mode === "dev" ? false : e.args.isProd;
 	});
 
+	// Set the mode to dev if we are running in express context
+	context.eventEmitter.bind(AssetBuilderEventList.GET_MODE, (e) => {
+		if (global.EXPRESS_DEV_SERVER_PLUGIN_MODE === true &&
+			process.env.NODE_ENV === "development") e.args.mode = "dev";
+	});
+
 	// Register our custom compiler
 	context.eventEmitter.bind(AssetBuilderEventList.FILTER_WEBPACK_COMPILER, (e) => {
 		// Ignore if we are not in dev mode
@@ -56,7 +60,7 @@ export default function (context: CoreContext, scope: string) {
 		if (context.mode !== "dev") return;
 
 		// Check if we are running as plugin in an existing app
-		if (global.EXPRESS_DEV_SERVER_PLUGIN_MODE === true) {
+		if (context.parentContext.isExpress === true) {
 			// Rewrite element config
 			rewriteAppConfig(context);
 			return;
@@ -71,6 +75,7 @@ export default function (context: CoreContext, scope: string) {
 
 		// Add a foo compiler
 		e.args.compiler = function () {
+			return true;
 		};
 
 		// Return a promise while we are starting our server
