@@ -106,10 +106,7 @@ export default function (context: CoreContext, scope: string) {
 				const compiler = webpack(context.webpackConfig, (err, stats) => {
 					// Check if we got obvious errors
 					if (err !== null) return reject(err);
-					context.webpackCallback(context, stats)
-						.then(exitCode => {
-							if (exitCode > 0) e.args.resolve(exitCode);
-						});
+					context.webpackCallback(context, stats).catch(reject);
 				});
 
 				// Register fallback for history router
