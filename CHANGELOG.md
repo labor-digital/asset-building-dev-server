@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.1](https://bitbucket.org/labor-digital/labor-dev-assetbuilding-dev-server/branches/compare/v1.5.1%0Dv1.5.0#diff) (2019-11-08)
+
+
+### Bug Fixes
+
+* make sure the dev server keeps running even if webpack failed to build the bundle ([74c87e4](https://bitbucket.org/labor-digital/labor-dev-assetbuilding-dev-server/commits/74c87e4))
+
+
+
 # [1.5.0](https://bitbucket.org/labor-digital/labor-dev-assetbuilding-dev-server/branches/compare/v1.5.0%0Dv1.4.0#diff) (2019-10-15)
 
 
