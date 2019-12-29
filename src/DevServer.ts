@@ -92,11 +92,17 @@ export default function (context: CoreContext, scope: string) {
 				stopPort: 8150
 			}).then(port => {
 
+				// Prepare the url
+				let url = "http://js.localmachine.space:{{port}}";
+				if (typeof (context.parentContext.laborConfig as any).devUrl === "string")
+					url = (context.parentContext.laborConfig as any).devUrl;
+				url = url.replace(/{{port}}/g, port);
+
 				// Render a header
 				console.log("");
 				console.log("Dev-Server started and is now listening on " + port + "!");
 				console.log(drawLine());
-				console.log("* APP - " + context.app.appName + ": http://js.localmachine.space:" + port + "/");
+				console.log("* APP - " + context.app.appName + ": " + url + "/");
 				console.log(drawLine());
 
 				// Rewrite element config

@@ -22,7 +22,12 @@ module.exports = function expressDevServerPlugin(context: ExpressContext): Promi
 	// Register webpack as express middleware
 	context.expressApp.use(require("webpack-dev-middleware")(context.compiler, {
 		logLevel: "silent",
-		publicPath: context.compiler.options.output.publicPath.replace(/^\./, "")
+		publicPath: context.compiler.options.output.publicPath.replace(/^\./, ""),
+		headers: {
+			etag: null,
+			"cache-control": "no-cache,no-store",
+			"Pragma": "no-cache"
+		}
 	}));
 	context.expressApp.use(require("webpack-hot-middleware")(context.compiler, {
 		// log: false,

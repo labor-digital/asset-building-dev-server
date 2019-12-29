@@ -48,3 +48,17 @@ devServerPlugin(app).then(() => {
     // Your express setup goes here...
 });
 ```
+
+## Changing the visible url in the console
+By default the console will show a url like http://js.localmachine.space:9999 when you are 
+launching a new instance of a project. If you want to change the url you can do so by adding 
+the "devUrl" option to your labor configuration in your package.json. The {{port}} placeholder
+will automatically be replaced with the correct port of your application.
+```
+{
+    [...]
+    "labor": {
+        "devUrl": "http://yourUrl:{{port}}"
+    }
+}
+```
