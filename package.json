@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "node flushLib.js && tsc",
 		"watch": "node flushLib.js && tsc --watch",
-		"link": "npm link @labor/asset-building"
+		"link": "npm link @labor-digital/asset-building"
 	},
 	"repository": {
 		"type": "git",
