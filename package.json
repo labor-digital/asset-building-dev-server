@@ -1,7 +1,7 @@
 {
-	"name": "@labor/asset-building-dev-server",
+	"name": "@labor-digital/asset-building-dev-server",
 	"version": "1.5.1",
-	"description": "An addon to our asset-builder that provides a dev server environment for webpack. Including support for multi-compilers!",
+	"description": "An extension to our asset-builder that provides a dev server environment for webpack. Including support for multi-compilers and express",
 	"main": "./dist/DevServer.js",
 	"scripts": {
 		"build": "node flushLib.js && tsc",
@@ -10,11 +10,11 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@bitbucket.org/labor-digital/labor-dev-assetbuilding-dev-server.git"
+		"url": "git+ssh://git@github.com:labor-digital/asset-building-dev-server.git"
 	},
-	"author": "Martin Neundorfer @LABOR",
-	"license": "ISC",
-	"homepage": "https://bitbucket.org/labor-digital/labor-dev-assetbuilding-dev-server#readme",
+	"author": "LABOR.digital",
+	"license": "Apache-2.0",
+	"homepage": "https://github.com/labor-digital/asset-building-dev-server",
 	"dependencies": {
 		"@types/express": "4.17.2",
 		"connect-history-api-fallback": "1.6.0",
@@ -25,7 +25,7 @@
 		"webpack-hot-middleware": "2.25.0"
 	},
 	"devDependencies": {
-		"@labor/asset-building": "4.7.0",
-		"typescript": "3.7.4"
+		"@labor-digital/asset-building": "4.9.1",
+		"typescript": "3.7.5"
 	}
 }

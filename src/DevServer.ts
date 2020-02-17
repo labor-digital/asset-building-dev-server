@@ -1,6 +1,6 @@
-import {WorkerContext} from "@labor/asset-building/dist/Core/WorkerContext";
-import {AssetBuilderEventList} from "@labor/asset-building/dist/AssetBuilderEventList";
-import {CoreContext} from "@labor/asset-building/dist/Core/CoreContext";
+import {WorkerContext} from "@labor-digital/asset-building/dist/Core/WorkerContext";
+import {AssetBuilderEventList} from "@labor-digital/asset-building/dist/AssetBuilderEventList";
+import {CoreContext} from "@labor-digital/asset-building/dist/Core/CoreContext";
 
 /**
  * Helper which draws a line for "design" purposes

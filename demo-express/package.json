@@ -11,8 +11,8 @@
 		"link": "npm link @labor/asset-building @labor/asset-building-dev-server"
 	},
 	"devDependencies": {
-		"@labor/asset-building": "*",
-		"@labor/asset-building-dev-server": "file:.."
+		"@labor-digital/asset-building": "*",
+		"@labor-digital/asset-building-dev-server": "file:.."
 	},
 	"labor": {
 		"builderVersion": 2,
@@ -25,7 +25,7 @@
 			}
 		],
 		"extensions": [
-			"@labor/asset-building-dev-server"
+			"@labor-digital/asset-building-dev-server"
 		]
 	}
 }

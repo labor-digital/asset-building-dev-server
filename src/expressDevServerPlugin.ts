@@ -1,4 +1,4 @@
-import ExpressContext from "@labor/asset-building/dist/Express/ExpressContext";
+import ExpressContext from "@labor-digital/asset-building/dist/Express/ExpressContext";
 
 declare global {
 	namespace NodeJS {

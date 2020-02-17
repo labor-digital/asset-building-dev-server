@@ -1,5 +1,5 @@
-const expressAssetBuildingPlugin = require("@labor/asset-building/dist/Express/expressAssetBuildingPlugin.js");
-const expressDevServerPlugin = require("@labor/asset-building-dev-server/dist/expressDevServerPlugin.js");
+const expressAssetBuildingPlugin = require("@labor-digital/asset-building/dist/Express/expressAssetBuildingPlugin.js");
+const expressDevServerPlugin = require("@labor-digital/asset-building-dev-server/dist/expressDevServerPlugin.js");
 const express = require("express");
 const app = express();
 const port = 8000;
