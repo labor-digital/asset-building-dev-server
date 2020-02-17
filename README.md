@@ -75,7 +75,7 @@ The localmachine.space domain is exactly that. It is a domain name that always p
 Its a helper to make dev urls easier to read; it works on every machine as long as you have an internet connection.
 
 ## Postcardware
-You're free to use these images, but if it makes it to your production environment we highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using.
+You're free to use this package, but if it makes it to your production environment we highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using.
 
 Our address is: LABOR.digital - Fischtorplatz 21 - 55116 Mainz, Germany
 
