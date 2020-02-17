@@ -1,6 +1,19 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.6.0](https://github.com/labor-digital/asset-building-dev-server/compare/v1.5.1...v1.6.0) (2020-02-17)
+
+
+### Features
+
+* preparation for github release ([ef10b18](https://github.com/labor-digital/asset-building-dev-server/commit/ef10b18a2561e9c56f0821a7ac035a5d12498738))
+* update dependencies and add cache-control headers to the dev middleware ([2f04ced](https://github.com/labor-digital/asset-building-dev-server/commit/2f04cedf252fb049c92856b630d98c06eadc5d6e))
+
+
+### Bug Fixes
+
+* update [@labor](https://github.com/labor) reference in link command ([13b3f2a](https://github.com/labor-digital/asset-building-dev-server/commit/13b3f2afa82f22b2cb9cd216363e981c73e08a59))
 
 ## [1.5.1](https://bitbucket.org/labor-digital/labor-dev-assetbuilding-dev-server/branches/compare/v1.5.1%0Dv1.5.0#diff) (2019-11-08)
 
