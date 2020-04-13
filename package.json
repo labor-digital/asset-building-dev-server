@@ -25,7 +25,7 @@
 		"webpack-hot-middleware": "2.25.0"
 	},
 	"devDependencies": {
-		"@labor-digital/asset-building": "4.11.0",
+		"@labor-digital/asset-building": "4.11.1",
 		"typescript": "3.8.3"
 	}
 }
