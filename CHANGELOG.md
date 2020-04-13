@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.1](https://github.com/labor-digital/asset-building-dev-server/compare/v1.7.0...v1.7.1) (2020-04-13)
+
+
+### Bug Fixes
+
+* update dependencies + fix typos in the readme.md ([21b1e41](https://github.com/labor-digital/asset-building-dev-server/commit/21b1e415c030dc73ff33575289925a24f999b8be))
+
 ## [1.7.0](https://github.com/labor-digital/asset-building-dev-server/compare/v1.6.2...v1.7.0) (2020-04-11)
 
 
