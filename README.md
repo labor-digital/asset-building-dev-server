@@ -36,23 +36,26 @@ npm install --save-dev @labor-digital/asset-building-dev-server
 * Done! :-)
 
 ## Adding the dev server to express apps
-Our asset builder can run as a middleware for every express app, providing
-hot module reloading in the same way the "dev" command does for virtually
+Our asset builder can run as a middleware in express, providing
+hot module replacement and webpack's dev features in the same way the "dev" command does for virtually
 every express app.
 
-We provide a function you can use in your server.js file. It will only apply
-the required middlewares if your NODE_ENV variable is set to "development".
+**We provide a function you can use in your server.js file. It will only apply
+the required middlewares if your NODE_ENV variable is set to "development".**
 
 Register the express plugin in your index.js like:
-```
-const devServerPlugin = require("@labor-digital/asset-building-dev-server/dist/ExpressDevServerPlugin");
+```javascript
+const expressAssetBuildingPlugin = require("@labor-digital/asset-building/dist/Interop/Express/expressAssetBuildingPlugin.js");
+const expressDevServerPlugin = require("@labor-digital/asset-building-dev-server/dist/ExpressDevServerPlugin");
 const express = require("express");
 const app = express();
 
 // Apply the dev server plugin to the app
-devServerPlugin(app).then(() => {
-    // Your express - app setup goes here...
-});
+expressAssetBuildingPlugin(app)
+   .then(expressDevServerPlugin)
+    .then(() => {
+        // Your express - app setup goes here...
+    });
 ```
 
 ## Changing the visible URL in the console
@@ -69,8 +72,8 @@ will automatically be replaced with the correct port of your application.
 
 ## Whats xyz.localmachine.space?
 To work locally, you can work with an IP like 127.0.0.1, localhost, or you can point a DNS record to your local machine. 
-The localmachine.space domain is precisely that. It is a domain name that always points to "127.0.0.1", no matter what subdomain you use.
-Its a helper to make dev URLs easier to read; it works on every machine as long as you have an internet connection.
+The localmachine.space domain is precisely that. It is a domain name that always leads to "127.0.0.1", no matter what subdomain you use.
+Its a helper to make dev URLs more comfortable to read; it works on every machine as long as you have an internet connection.
 
 ## Postcardware
 You're free to use this package, but if it makes it to your production environment, we highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using.

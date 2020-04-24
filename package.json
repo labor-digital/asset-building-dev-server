@@ -1,7 +1,7 @@
 {
 	"name": "@labor-digital/asset-building-dev-server",
 	"version": "1.7.1",
-	"description": "An extension to our asset-builder that provides a dev server environment for webpack. Including support for multi-compilers and express",
+	"description": "An Extension for the LABOR.digital asset-builder, that provides a dev server environment for webpack. Including support for multi-compilers and express",
 	"main": "./dist/DevServer.js",
 	"scripts": {
 		"build": "node flushLib.js && tsc",
@@ -12,7 +12,37 @@
 		"type": "git",
 		"url": "git+ssh://git@github.com:labor-digital/asset-building-dev-server.git"
 	},
-	"author": "LABOR.digital",
+	"keywords": [
+		"webpack",
+		"dev",
+		"hot-reload",
+		"standalone",
+		"express",
+		"interop",
+		"dev-server",
+		"assets",
+		"typescript",
+		"builder",
+		"simple",
+		"easy",
+		"configuration",
+		"modern"
+	],
+	"author": {
+		"name": "LABOR.digital",
+		"email": "info@labor.tools",
+		"url": "https://www.labor.digital"
+	},
+	"contributors": [
+		{
+			"name": "Martin Neundorfer",
+			"email": "code@neunerlei.eu",
+			"url": "https://www.neunerlei.eu"
+		}
+	],
+	"bugs": {
+		"url": "https://github.com/labor-digital/asset-building-dev-server/issues"
+	},
 	"license": "Apache-2.0",
 	"homepage": "https://github.com/labor-digital/asset-building-dev-server",
 	"dependencies": {
@@ -25,7 +55,7 @@
 		"webpack-hot-middleware": "2.25.0"
 	},
 	"devDependencies": {
-		"@labor-digital/asset-building": "4.11.1",
+		"@labor-digital/asset-building": "4.13.0",
 		"typescript": "3.8.3"
 	}
 }
