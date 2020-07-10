@@ -1,11 +1,11 @@
-import ExpressContext from "@labor-digital/asset-building/dist/Express/ExpressContext";
+import ExpressContext from "@labor-digital/asset-building/dist/Interop/Express/ExpressContext";
 
 declare global {
-	namespace NodeJS {
-		interface Global {
-			EXPRESS_DEV_SERVER_PLUGIN_MODE: boolean
-		}
-	}
+    namespace NodeJS {
+        interface Global {
+            EXPRESS_DEV_SERVER_PLUGIN_MODE: boolean
+        }
+    }
 }
 
 // Mark plugin as loaded
@@ -13,28 +13,28 @@ global.EXPRESS_DEV_SERVER_PLUGIN_MODE = true;
 
 module.exports = function expressDevServerPlugin(context: ExpressContext): Promise<ExpressContext> {
 
-	// Ignore if this is not a dev context
-	if (context.isProd) {
-		console.log("expressDevServerPlugin: Skipping dev server, because the app is running in production mode!");
-		return Promise.resolve(context);
-	}
+    // Ignore if this is not a dev context
+    if (context.isProd) {
+        console.log("expressDevServerPlugin: Skipping dev server, because the app is running in production mode!");
+        return Promise.resolve(context);
+    }
 
-	// Register webpack as express middleware
-	context.expressApp.use(require("webpack-dev-middleware")(context.compiler, {
-		logLevel: "silent",
-		publicPath: context.compiler.options.output.publicPath.replace(/^\./, ""),
-		headers: {
-			etag: null,
-			"cache-control": "no-cache,no-store",
-			"Pragma": "no-cache"
-		}
-	}));
-	context.expressApp.use(require("webpack-hot-middleware")(context.compiler, {
-		// log: false,
-		path: "/__webpack_hmr",
-		heartbeat: 10 * 1000
-	}));
+    // Register webpack as express middleware
+    context.expressApp.use(require("webpack-dev-middleware")(context.compiler, {
+        logLevel: "silent",
+        publicPath: context.compiler.options.output.publicPath.replace(/^\./, ""),
+        headers: {
+            etag: null,
+            "cache-control": "no-cache,no-store",
+            "Pragma": "no-cache"
+        }
+    }));
+    context.expressApp.use(require("webpack-hot-middleware")(context.compiler, {
+        // log: false,
+        path: "/__webpack_hmr",
+        heartbeat: 10 * 1000
+    }));
 
-	// Done
-	return Promise.resolve(context);
+    // Done
+    return Promise.resolve(context);
 };
