@@ -1,8 +1,12 @@
+import './Index.sass';
+
 // Change this to see the hot reloading in action!
 console.log('loaded on dev server!');
 console.log('loaded on dev server, too!');
 console.log('loaded on dev server, three!');
 
-const e = document.createElement('div');
-e.innerText = 'Hello World!';
-document.body.appendChild(e);
+const el = document.createElement('div');
+el.classList.add('myElement');
+el.innerHTML = 'HELLO World!';
+
+document.body.appendChild(el);

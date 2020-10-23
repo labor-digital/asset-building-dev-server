@@ -8,7 +8,7 @@
 		"build": "labor-asset-building build",
 		"watch": "labor-asset-building watch",
 		"dev": "labor-asset-building dev",
-		"link": "npm link @labor/asset-building @labor/asset-building-dev-server"
+		"link": "npm link @labor-digital/asset-building @labor-digital/asset-building-dev-server"
 	},
 	"devDependencies": {
 		"@labor-digital/asset-building": "*",
