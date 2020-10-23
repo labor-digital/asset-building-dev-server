@@ -77,7 +77,7 @@ export default function (context: CoreContext, scope: string) {
         }
         
         // Check if we are running as plugin in an existing app
-        if (context.parentContext.isExpress === true) {
+        if (context.parentContext.environment === 'express') {
             // Rewrite element config
             rewriteAppConfig(context);
             return;
@@ -134,7 +134,7 @@ export default function (context: CoreContext, scope: string) {
                     if (err !== null) {
                         return reject(err);
                     }
-                    context.webpackCallback(context, stats).catch(reject);
+                    e.args.callback(context, stats, () => null, reject);
                 });
                 
                 // Register fallback for history router
