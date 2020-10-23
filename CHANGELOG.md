@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/labor-digital/asset-building-dev-server/compare/v1.7.1...v1.8.0) (2020-07-10)
+
+
+### Features
+
+* make code PSR-2 compliant ([25820f7](https://github.com/labor-digital/asset-building-dev-server/commit/25820f71e7e4c79bc6d4726385db221000ebaffb))
+* update dependencies and package.json + fix express docs ([56f5a99](https://github.com/labor-digital/asset-building-dev-server/commit/56f5a99c5f65945ba22dce8fc75f999a98289bdf))
+
+
+### Bug Fixes
+
+* update dependencies ([603842e](https://github.com/labor-digital/asset-building-dev-server/commit/603842e0db21e71e984ec5787b4961e95751d4bf))
+* use correct ExpressContext ([e0f9eda](https://github.com/labor-digital/asset-building-dev-server/commit/e0f9eda9839da381214986ea8d40b833fe69fe6e))
+
 ### [1.7.1](https://github.com/labor-digital/asset-building-dev-server/compare/v1.7.0...v1.7.1) (2020-04-13)
 
 
