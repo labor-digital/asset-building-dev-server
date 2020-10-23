@@ -1,6 +1,6 @@
 {
 	"name": "@labor-digital/asset-building-dev-server",
-	"version": "1.8.0",
+	"version": "2.0.0",
 	"description": "An Extension for the LABOR.digital asset-builder, that provides a dev server environment for webpack. Including support for multi-compilers and express",
 	"main": "./dist/DevServer.js",
 	"scripts": {

@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/labor-digital/asset-building-dev-server/compare/v1.8.0...v2.0.0) (2020-10-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* major dependency update
+
+### Features
+
+* adjust plugin for new asset builder api ([cbfa513](https://github.com/labor-digital/asset-building-dev-server/commit/cbfa513863917a5d433f391a0dd1eb41db757307))
+* update to asset-builder v8 ([2b6aa26](https://github.com/labor-digital/asset-building-dev-server/commit/2b6aa2623dd112f700aa0ca56919dc98cb00d498))
+
 ## [1.8.0](https://github.com/labor-digital/asset-building-dev-server/compare/v1.7.1...v1.8.0) (2020-07-10)
 
 
