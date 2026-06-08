@@ -19,7 +19,6 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 24
-          registry-url: https://registry.npmjs.org/
       -
         name: Installing npm modules
         run: npm install
@@ -31,6 +30,11 @@ jobs:
         uses: labor-digital/conventional-release-action@master
         with:
           github-token: ${{ secrets.github_token }}
+      -
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org/
       -
         name: Publish library on npm
         run: npm publish --provenance --access public
