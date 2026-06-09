@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/labor-digital/asset-building-dev-server/compare/v2.0.0...v2.0.1) (2026-06-09)
+
+
+### Bug Fixes
+
+* pipeline update ([0f91936](https://github.com/labor-digital/asset-building-dev-server/commit/0f919362de1b4f83338c78a07601e77c4a33d695))
+* pipeline update ([f051e8d](https://github.com/labor-digital/asset-building-dev-server/commit/f051e8df76cec438dbc4092f7b9087eaeb016ba4))
+
 ## [2.0.0](https://github.com/labor-digital/asset-building-dev-server/compare/v1.8.0...v2.0.0) (2020-10-23)
 
 
